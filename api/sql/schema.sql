@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS cert_revocation_list;
+
+CREATE TABLE cert_revocation_list(
+  id SERIAL PRIMARY KEY,
+  serial TEXT NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
