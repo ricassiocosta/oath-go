@@ -17,7 +17,7 @@ type Route struct {
 
 // Setup insert all routes in a given router
 func Setup(r *mux.Router) *mux.Router {
-	routes := userRoutes
+	routes := certificateRoutes
 	/* routes = append(routes, routeLogin)
 	routes = append(routes, postRoutes...) */
 

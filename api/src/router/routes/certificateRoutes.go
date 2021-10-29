@@ -5,7 +5,7 @@ import (
 	"oath-go/src/controllers"
 )
 
-var userRoutes = []Route{
+var certificateRoutes = []Route{
 	{
 		URI:         "/crl",
 		Method:      http.MethodGet,
