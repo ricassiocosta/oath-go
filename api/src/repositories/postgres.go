@@ -46,7 +46,7 @@ func (u CRL) GetCRL() ([]models.CRLCert, error) {
 // GetCRL all certificate's serial in the CRL
 func (u CRL) AddCertToCRL(serial string) error {
 	_, err := u.db.Query(
-		`INSERT INTO users (serial) VALUES ($1)`,
+		`INSERT INTO cert_revocation_list (serial) VALUES ($1)`,
 		serial,
 	)
 	if err != nil {

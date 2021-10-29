@@ -16,12 +16,12 @@ var userRoutes = []Route{
 		URI:         "/crl",
 		Method:      http.MethodPost,
 		Function:    controllers.AddCertToCRL,
-		RequireAuth: true,
+		RequireAuth: false,
 	},
 	{
 		URI:         "/trustbundle",
 		Method:      http.MethodGet,
 		Function:    controllers.GetTrustBundle,
-		RequireAuth: true,
+		RequireAuth: false,
 	},
 }
