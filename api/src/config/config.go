@@ -13,6 +13,8 @@ var (
 	DBConnectionString = ""
 	APIPort            = 0
 	APISecret          []byte
+	RootCACertPath     = ""
+	RootCAKeyPath      = ""
 )
 
 const (
@@ -33,6 +35,8 @@ func LoadEnv() {
 	}
 
 	APISecret = []byte(os.Getenv("API_SECRET"))
+	RootCACertPath = os.Getenv("ROOT_CA_CERT_PATH")
+	RootCAKeyPath = os.Getenv("ROOT_CA_KEY_PATH")
 
 	dbAddress := os.Getenv("DB_ADDRESS")
 	dbUser := os.Getenv("DB_USER")
