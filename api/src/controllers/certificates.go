@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
-	"oath-go/src/database"
 	"oath-go/src/models"
 	"oath-go/src/repositories"
-	"oath-go/src/responses"
+	"oath-go/src/utils/database"
+	"oath-go/src/utils/responses"
 )
 
 // GetCRL is responsible for returning the CRL list

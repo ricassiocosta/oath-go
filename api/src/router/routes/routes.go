@@ -2,7 +2,7 @@ package routes
 
 import (
 	"net/http"
-	"oath-go/src/middlewares"
+	"oath-go/src/utils/middlewares"
 
 	"github.com/gorilla/mux"
 )
