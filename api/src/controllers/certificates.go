@@ -65,7 +65,8 @@ func AddCertToCRL(w http.ResponseWriter, r *http.Request) {
 	responses.JSON(w, http.StatusCreated, nil)
 }
 
-// GetTrustBundle is responsible return a signed certificate 
-func GetTrustBundle(w http.ResponseWriter, r *http.Request) {
+// SignCertificate is responsible to return a signed certificate
+// for a given CSR
+func SignCertificate(w http.ResponseWriter, r *http.Request) {
 	
 }

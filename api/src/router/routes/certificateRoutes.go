@@ -19,9 +19,9 @@ var certificateRoutes = []Route{
 		RequireAuth: false,
 	},
 	{
-		URI:         "/trustbundle",
-		Method:      http.MethodGet,
-		Function:    controllers.GetTrustBundle,
+		URI:         "/signcertificate",
+		Method:      http.MethodPost,
+		Function:    controllers.SignCertificate,
 		RequireAuth: false,
 	},
 }
