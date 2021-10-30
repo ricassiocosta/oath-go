@@ -13,7 +13,6 @@ import (
 func GetCRL(w http.ResponseWriter, r *http.Request) {
 	crl, err := getCRLUseCase.Execute(w)
 	if err != nil {
-		responses.Error(w, http.StatusInternalServerError, err)
 		return
 	}
 
@@ -30,7 +29,6 @@ func AddCertToCRL(w http.ResponseWriter, r *http.Request) {
 
 	err = addCertToCRLUseCase.Execute(w, body)
 	if err != nil {
-		responses.Error(w, http.StatusInternalServerError, err)
 		return
 	}
 
@@ -48,7 +46,6 @@ func SignCertificate(w http.ResponseWriter, r *http.Request) {
 
 	signedCert, err:= signCertificateUseCase.Execute(w, body)
 	if err != nil {
-		responses.Error(w, http.StatusInternalServerError, err)
 		return
 	}
 
