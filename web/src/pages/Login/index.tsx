@@ -1,15 +1,18 @@
 import React from "react";
 
 import logo from '../../assets/images/github.svg'
-import { LoginPage } from "./styles";
+import { LoginPage, GithubLogo, LoginContainer } from "./styles";
 
 const Login = () => {
   return (
     <LoginPage>
-      <p>Testing</p>
-      <img src={logo} alt="testing"/>
+      <h1>PKI API</h1>
+      <LoginContainer>
+      <span>Entrar com o </span>
+      <GithubLogo src={logo} alt="testing"/>
+      </LoginContainer>
     </LoginPage>
   )
 }
 
-export default Login
+export default Login  
