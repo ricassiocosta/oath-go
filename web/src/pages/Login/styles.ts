@@ -13,11 +13,12 @@ export const LoginPage = styled.div`
   }
 `
 
-export const LoginContainer = styled.button`
+export const LoginContainer = styled.a`
   border: none;
   border-radius: 12px;
   font-size: 18px;
   background-color: #505153;
+  text-decoration: none;
 
   display: flex;
   justify-content: space-evenly;
