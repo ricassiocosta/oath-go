@@ -16,12 +16,12 @@ var certificateRoutes = []Route{
 		URI:         "/crl",
 		Method:      http.MethodPost,
 		Function:    controllers.AddCertToCRL,
-		RequireAuth: false,
+		RequireAuth: true,
 	},
 	{
 		URI:         "/signcertificate",
 		Method:      http.MethodPost,
 		Function:    controllers.SignCertificate,
-		RequireAuth: false,
+		RequireAuth: true,
 	},
 }
