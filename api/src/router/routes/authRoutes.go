@@ -9,7 +9,13 @@ var authRoutes = []Route{
 	{
 		URI:         "/callback/github",
 		Method:      http.MethodGet,
-		Function:    controllers.AuthGithub,
+		Function:    controllers.GithubCallback,
+		RequireAuth: false,
+	},
+	{
+		URI:         "/auth",
+		Method:      http.MethodPost,
+		Function:    controllers.Auth,
 		RequireAuth: false,
 	},
 }
