@@ -18,8 +18,7 @@ type Route struct {
 // Setup insert all routes in a given router
 func Setup(r *mux.Router) *mux.Router {
 	routes := certificateRoutes
-	/* routes = append(routes, routeLogin)
-	routes = append(routes, postRoutes...) */
+	routes = append(routes, authRoutes...)
 
 	for _, route := range routes {
 		if route.RequireAuth {
