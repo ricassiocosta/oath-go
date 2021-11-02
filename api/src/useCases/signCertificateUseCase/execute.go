@@ -14,6 +14,7 @@ import (
 	"oath-go/src/config"
 	"oath-go/src/models"
 	"oath-go/src/utils/responses"
+	"strings"
 	"time"
 )
 
@@ -34,6 +35,8 @@ func Execute(w http.ResponseWriter, body []byte) ([]byte, error) {
 		responses.Error(w, http.StatusBadRequest, err)
 		return nil, err
 	}
+
+	csr.CSR = strings.Replace(csr.CSR, `\n`, "\n", -1)
 
 	if err := csr.Prepare(); err != nil {
 		responses.Error(w, http.StatusBadRequest, err)

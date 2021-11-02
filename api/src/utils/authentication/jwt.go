@@ -31,6 +31,7 @@ func ValidateToken(r *http.Request) error {
 	tokenString := getToken(r)
 	token, err := jwt.Parse(tokenString, getVerificationKey)
 	if err != nil {
+		fmt.Println(err)
 		return errInvalidToken
 	}
 

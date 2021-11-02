@@ -22,7 +22,6 @@ func GetCRL(w http.ResponseWriter, r *http.Request) {
 
 // AddCertToCRL is responsible add a certificate serial into CRL
 func AddCertToCRL(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Access-Control-Allow-Origin", "*")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		responses.Error(w, http.StatusUnprocessableEntity, err)
