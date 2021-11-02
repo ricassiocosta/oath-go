@@ -3,6 +3,7 @@ package controllers
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"oath-go/src/config"
@@ -28,6 +29,7 @@ type AuthData struct {
 
 // GithubCallback for get the token from github
 func GithubCallback(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	query := r.URL.Query()
 	requestToken := query["code"]
 
@@ -60,7 +62,7 @@ func GithubCallback(w http.ResponseWriter, r *http.Request) {
 	var auth AuthData
 	auth.Token = token[0]
 
-	responses.JSON(w, http.StatusCreated, auth)
+	responses.JSON(w, http.StatusAccepted, auth)
 }
 
 type User struct {
@@ -69,8 +71,11 @@ type User struct {
 
 // Auth is responsible to handle the user login
 func Auth(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	query := r.URL.Query()
-	githubToken := query["github_token"]
+	githubToken := query["githubToken"]
+
+	fmt.Println(string(githubToken[0]))
 
 	client := &http.Client{
 		Timeout: time.Second * 10,
@@ -112,5 +117,5 @@ func Auth(w http.ResponseWriter, r *http.Request) {
 	var auth AuthData
 	auth.Token = token
 
-	responses.JSON(w, http.StatusCreated, auth)
+	responses.JSON(w, http.StatusAccepted, auth)
 }

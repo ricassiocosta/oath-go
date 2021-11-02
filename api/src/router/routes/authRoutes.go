@@ -14,7 +14,7 @@ var authRoutes = []Route{
 	},
 	{
 		URI:         "/auth",
-		Method:      http.MethodPost,
+		Method:      http.MethodGet,
 		Function:    controllers.Auth,
 		RequireAuth: false,
 	},

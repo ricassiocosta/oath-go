@@ -11,6 +11,7 @@ import (
 
 // GetCRL is responsible for returning the CRL list
 func GetCRL(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	crl, err := getCRLUseCase.Execute(w)
 	if err != nil {
 		return
@@ -21,6 +22,7 @@ func GetCRL(w http.ResponseWriter, r *http.Request) {
 
 // AddCertToCRL is responsible add a certificate serial into CRL
 func AddCertToCRL(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		responses.Error(w, http.StatusUnprocessableEntity, err)
@@ -38,6 +40,7 @@ func AddCertToCRL(w http.ResponseWriter, r *http.Request) {
 // SignCertificate is responsible to return a signed certificate
 // for a given CSR
 func SignCertificate(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		responses.Error(w, http.StatusUnprocessableEntity, err)
