@@ -24,11 +24,11 @@ const GetRevogationList = () => {
       <h1>Lista dos Certificados Revogados</h1>
       <Menu>
         <ol>
-        {certs.length > 0 ? (
+        {certs ? (
           certs.map(cert => (
             <li key={cert.id}>{cert.serial}</li>
           ))
-        ): <></>}
+        ): <><p>Não há certificados na CRL</p></>}
         </ol>
       </Menu>
     </Container>
